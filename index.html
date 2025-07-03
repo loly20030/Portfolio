@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Futuriste</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <script src="https://kit.fontawesome.com/47923bc3f1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- section header -->
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="images/logo3.png" alt="Logo" class="logo" />
+        <ul id="sidemenu">
+          <li><a href="#header">Accueil</a></li>
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Mes œuvres</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+      <div class="header-text" data-aos="fade-down">
+        <p>UI/UX Designer</p>
+        <h1>Bienvenue à bord,<br/>Je suis <span>Chabane</span> Samari</h1>
+        <p class="narration">Explorez mon univers créatif et laissez-vous guider dans un voyage numérique.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- about -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1" data-aos="fade-right">
+          <img src="images/image.jpg" alt="photo de profil"/>
+        </div>
+        <div class="about-col-2" data-aos="fade-left">
+          <h1 class="sub-title">À Propos de moi</h1>
+          <p>
+            Passionné par la création digitale, je trace mon chemin dans l’univers du design et du développement. 
+            Chaque projet est une escale vers de nouvelles explorations, 
+            avec comme objectif de façonner des expériences toujours plus immersives.
+          </p>
+          <div class="tab-tiles">
+            <p class="tab-links active-link" onclick="opentab('competence', event)">Compétences</p>
+            <p class="tab-links" onclick="opentab('experience', event)">Expérience</p>
+            <p class="tab-links" onclick="opentab('mesoeuvres', event)">Mes œuvres</p>
+          </div>
+          <div class="tab-contents active-tab" id="competence">
+            <ul>
+              <li><span>UI/UX</span> <br />Design d'interfaces web et mobile</li>
+              <li><span>Développement Web</span> <br />Applications web performantes</li>
+              <li><span>Apps Mobiles</span> <br />Conception Android/iOS</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>Stage 2024</span> <br />UI Designer Junior chez [Nom Entreprise]</li>
+              <li><span>Freelance</span> <br />Conception de projets clients</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="mesoeuvres">
+            <ul>
+              <li><span>Portfolio</span> <br />Sélection de mes projets récents</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- services -->
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title" data-aos="fade-up">Mes Services</h1>
+      <p class="narration">Embarquez dans mon univers de compétences et découvrez mes solutions numériques sur mesure.</p>
+      <div class="services-list">
+        <div data-aos="zoom-in">
+          <i class="fa-solid fa-code"></i>
+          <h2>Web Design</h2>
+          <p>Des interfaces modernes et intuitives, prêtes à captiver vos utilisateurs.</p>
+          <a href="#">Savoir plus</a>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="100">
+          <i class="fa-solid fa-crop-simple"></i>
+          <h2>UI/UX</h2>
+          <p>Optimisation de l'expérience utilisateur avec des maquettes claires et fluides.</p>
+          <a href="#">Savoir plus</a>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="200">
+          <i class="fa-brands fa-app-store"></i>
+          <h2>App Design</h2>
+          <p>Conception et prototypage d'applications innovantes, pensées pour le futur.</p>
+          <a href="#">Savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- portfolio -->
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title" data-aos="fade-up">Mes œuvres</h1>
+      <p class="narration">Plongez dans mes projets et explorez leur histoire.</p>
+      <div class="work-list">
+        <div class="work" data-aos="fade-up">
+          <img src="images/pin4.jpg" alt="projet 1" />
+          <div class="layer">
+            <h3>Social Media App</h3>
+            <p>Application de réseau social avec design épuré et fonctionnalités avancées.</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/pin2.jpg" alt="projet 2" />
+          <div class="layer">
+            <h3>Dashboard Analytics</h3>
+            <p>Interface analytique intuitive pour visualiser vos données en temps réel.</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/pin5.jpg" alt="projet 3" />
+          <div class="layer">
+            <h3>E-commerce Concept</h3>
+            <p>Design innovant pour une plateforme de vente en ligne.</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+      <a href="galerie.html" class="btn">Voir plus</a>
+    </div>
+  </div>
+
+  <!-- contact -->
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left" data-aos="fade-right">
+          <h1 class="sub-title">Contactez-moi</h1>
+          <p><i class="fa-solid fa-paper-plane"></i> contact@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i> +213 000 000 000</p>
+          <div class="social-icons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <a href="" download class="btn btn2">Télécharger CV</a>
+        </div>
+        <div class="contact-right" data-aos="fade-left">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Nom" placeholder="Votre nom" required />
+            <input type="email" name="Email" placeholder="Votre email" required />
+            <textarea name="Message" rows="6" placeholder="Votre message"></textarea>
+            <button type="submit" class="btn btn2">Soumettre</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+    <div class="Copyright">
+      <p>© 2025 Ekeman. Conçu avec <i class="fa-solid fa-heart"></i> par 2ATech</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>

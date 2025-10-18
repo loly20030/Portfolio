@@ -1,31 +1,20 @@
-// Gestion des onglets
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
-
-function opentab(tabname, event) {
-    for (var tablink of tablinks) {
-        tablink.classList.remove("active-link");
-    }
-    for (var tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add('active-tab');
-}
-
-// Gestion du menu mobile
+/* =========================
+   Menu mobile open/close
+   ========================= */
 var sidemenu = document.getElementById("sidemenu");
 
 function openmenu() {
-    sidemenu.style.right = "0";
+    if (sidemenu) sidemenu.style.right = "0";
 }
 
 function closemenu() {
-    sidemenu.style.right = "-200px";
+    if (sidemenu) sidemenu.style.right = "-220px";
 }
 
-// Gestion du formulaire
-const scriptURL = 'https://script.google.com/macros/s/AKfycb.../exec'; // Remplacez par votre URL
+/* =========================
+   Form submit (Google Sheets)
+   ========================= */
+const scriptURL = 'https://script.google.com/macros/s/AKfycb.../exec';
 const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById("msg");
 
@@ -35,9 +24,7 @@ if (form) {
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
                 msg.innerHTML = "Message envoyé avec succès";
-                setTimeout(function() {
-                    msg.innerHTML = "";
-                }, 5000);
+                setTimeout(function() { msg.innerHTML = ""; }, 5000);
                 form.reset();
             })
             .catch(error => {
@@ -46,3 +33,35 @@ if (form) {
             });
     });
 }
+
+/* =========================
+   Parallaxe léger
+   ========================= */
+(function(){
+  var sky = document.querySelector('.starry-sky');
+  if (!sky) return;
+  
+  window.addEventListener('mousemove', function(e){
+    var x = (e.clientX / window.innerWidth) * 100;
+    var y = (e.clientY / window.innerHeight) * 100;
+    sky.style.backgroundPosition = (50 + (x - 50) * 0.2) + '% ' + (50 + (y - 50) * 0.2) + '%';
+  });
+
+  window.addEventListener('scroll', function(){
+    var sc = window.scrollY;
+    var planet = document.querySelector('.planet-image-container'); // CHANGÉ ICI
+    var glow = document.querySelector('.sun-glow');
+    var fixedStar = document.querySelector('.fixed-star');
+    
+    if (planet) planet.style.transform = 'translateX(-50%) translateY(' + (sc * 0.02) + 'px)';
+    if (glow) glow.style.transform = 'translateX(-50%) translateY(' + (sc * 0.01) + 'px)';
+    if (fixedStar) fixedStar.style.transform = 'translateX(-50%) translateY(' + (sc * 0.015) + 'px)';
+  }, { passive: true });
+})();
+
+/* =========================
+   AOS init
+   ========================= */
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.AOS) AOS.init({ duration: 1000, once: true });
+});

@@ -15,7 +15,7 @@
       <img src="images/logo3.png" alt="Logo" class="logo" />
       <ul id="sidemenu">
         <li><a href="#header">Accueil</a></li>
-        <li><a href="#about">À Propos</a></li> <!-- CHANGÉ ICI -->
+        <li><a href="#about">À Propos</a></li>
         <li><a href="#services">Compétence</a></li>
         <li><a href="#portfolio">Partenaires</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -25,25 +25,24 @@
     </div>
   </nav>
 
-  <!-- HERO (section accueil avec fond spatial en CSS/JS, remplace l'ancien #header visuel) -->
-    <!-- HERO (section accueil avec fond spatial en CSS/JS, remplace l'ancien #header visuel) -->
+  <!-- HERO -->
   <header id="header" class="hero">
-    <div class="starry-sky" aria-hidden="true"></div>
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="videos/vd.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la vidéo HTML5.
+    </video>
+
     <div class="sun-glow" aria-hidden="true"></div>
-    <div class="planet-image-container" aria-hidden="true">
-      <img src="images/space1.jpg" alt="Planète futuriste" class="planet-image" />
-    </div>
-    <div class="fixed-star" aria-hidden="true"></div>
 
     <div class="container hero-inner">
       <div class="header-text" data-aos="fade-down">
-        <h1 class="hero-title">BIENVENUE DANS LE FUTUR !</h1>
+        <h1 class="hero-title">Chaque design est une étoile dans mon univers créatif</h1>
         <div class="title-underline"></div>
       </div>
     </div>
   </header>
 
-   <!-- BIO-GRAPHIQUE -->
+  <!-- BIO-GRAPHIQUE -->
   <section id="about" class="about-section">
     <div class="container">
       <div class="row">
@@ -101,16 +100,140 @@
             </p>
           </div>
 
+          <!-- Onglets -->
           <div class="bio-links">
-            <a href="#services" class="bio-link">COMPÉTENCE</a>
-            <a href="#portfolio" class="bio-link">EXPÉRIENCE</a>
+            <button class="bio-link" data-tab="skills">COMPÉTENCE</button>
+            <button class="bio-link" data-tab="experience">EXPÉRIENCE</button>
+          </div>
+
+          <!-- Contenu des onglets -->
+          <div class="tab-content">
+            <!-- Onglet Compétences -->
+            <!-- Onglet Compétences -->
+<div id="skills" class="tab-pane">
+  <div class="competence-container">
+    <div class="software-list">
+      <div class="software-item">
+        <div class="software-info">
+          <div class="software-icon">
+            <img src="images/photoshop.png" alt="Photoshop" />
+          </div>
+          <span class="software-name">Photoshop</span>
+        </div>
+        <div class="skill-bar-container">
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="90"></div>
+          </div>
+        </div>
+      </div>
+      <div class="software-item">
+        <div class="software-info">
+          <div class="software-icon">
+            <img src="images/illustrator.png" alt="Illustrator" />
+          </div>
+          <span class="software-name">Illustrator</span>
+        </div>
+        <div class="skill-bar-container">
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="85"></div>
+          </div>
+        </div>
+      </div>
+      <div class="software-item">
+        <div class="software-info">
+          <div class="software-icon">
+            <img src="images/indesign.png" alt="Indesign" />
+          </div>
+          <span class="software-name">Indesign</span>
+        </div>
+        <div class="skill-bar-container">
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="80"></div>
+          </div>
+        </div>
+      </div>
+      <div class="software-item">
+        <div class="software-info">
+          <div class="software-icon">
+            <img src="images/after-effects.png" alt="After Effect" />
+          </div>
+          <span class="software-name">After Effect</span>
+        </div>
+        <div class="skill-bar-container">
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="75"></div>
+          </div>
+        </div>
+      </div>
+      <div class="software-item">
+        <div class="software-info">
+          <div class="software-icon">
+            <img src="images/premiere-pro.png" alt="Premiere Pro" />
+          </div>
+          <span class="software-name">Premiere Pro</span>
+        </div>
+        <div class="skill-bar-container">
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="70"></div>
+          </div>
+        </div>
+      </div>
+      <div class="software-item">
+        <div class="software-info">
+          <div class="software-icon">
+            <img src="images/blender.png" alt="Blender" />
+          </div>
+          <span class="software-name">Blender</span>
+        </div>
+        <div class="skill-bar-container">
+          <div class="skill-bar">
+            <div class="skill-progress" data-level="65"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            <!-- Onglet Expérience -->
+            <div id="experience" class="tab-pane">
+              <div class="experience-container">
+                <div class="experience-item">
+                  <div class="experience-period">2022 - Présent</div>
+                  <div class="experience-title">Designer Graphique Senior</div>
+                  <div class="experience-company">Innovatione Studio</div>
+                  <div class="experience-description">
+                    Direction des projets de design, création d'identités visuelles pour des clients internationaux, 
+                    supervision d'une équipe de 5 designers juniors.
+                  </div>
+                </div>
+                <div class="experience-item">
+                  <div class="experience-period">2020 - 2022</div>
+                  <div class="experience-title">UI/UX Designer</div>
+                  <div class="experience-company">Digital Solutions Inc.</div>
+                  <div class="experience-description">
+                    Conception d'interfaces utilisateur pour applications mobiles et web, 
+                    réalisation de tests utilisateurs, collaboration avec les développeurs front-end.
+                  </div>
+                </div>
+                <div class="experience-item">
+                  <div class="experience-period">2018 - 2020</div>
+                  <div class="experience-title">Designer Graphique</div>
+                  <div class="experience-company">Creative Agency</div>
+                  <div class="experience-description">
+                    Création de supports print et digital, conception de chartes graphiques, 
+                    participation à des campagnes publicitaires pour des marques locales.
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
   
-   <!-- ŒUVRES -->
+  <!-- Le reste du code reste inchangé -->
+  <!-- ŒUVRES -->
   <section id="services">
     <div class="container">
       <h1 class="sub-title" data-aos="fade-up">ŒUVRE</h1>
@@ -143,32 +266,42 @@
     </div>
   </section>
 
-  <!-- ŒUVRE -->
+  <!-- PARTENAIRES -->
   <section id="portfolio">
     <div class="container">
       <h1 class="sub-title" data-aos="fade-up">Partenaires</h1>
       <div class="work-list">
         <div class="work" data-aos="fade-up">
-          <img src="images/pin4.jpg" alt="projet 1" />
+          <img src="images/UK LOGO.png" alt="UK" />
           <div class="layer">
-            <h3>Social Media App</h3>
-            <p>Application de réseau social avec design épuré et fonctionnalités avancées.</p>
             <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
+
         <div class="work" data-aos="fade-up" data-aos-delay="100">
-          <img src="images/pin2.jpg" alt="projet 2" />
+          <img src="images/YENDE GROUP LOGO.png" alt="Yende Group" />
           <div class="layer">
-            <h3>Dashboard Analytics</h3>
-            <p>Interface analytique intuitive pour visualiser vos données en temps réel.</p>
             <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
+
         <div class="work" data-aos="fade-up" data-aos-delay="200">
-          <img src="images/pin5.jpg" alt="projet 3" />
+          <img src="images/ONAT LOGO.png" alt="Onat" />
           <div class="layer">
-            <h3>E-commerce Concept</h3>
-            <p>Design innovant pour une plateforme de vente en ligne.</p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="work" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/EIT SOLUTION.png" alt="Partenaire 4" />
+          <div class="layer">
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="work" data-aos="fade-up" data-aos-delay="400">
+          <img src="images/JEFFA EVENT LOGO.png" alt="Partenaire 5" />
+          <div class="layer">
             <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
@@ -176,7 +309,7 @@
     </div>
   </section>
 
-   <!-- CONTACT -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <h1 class="sub-title" data-aos="fade-up">CONTACTEZ-MOI</h1>
@@ -189,7 +322,7 @@
               </div>
               <div class="contact-details">
                 <h3>EMAIL</h3>
-                <p>contact@gmail.com</p>
+                <p>samarichabane04@gmail.com </p>
               </div>
             </div>
             <div class="contact-item">
@@ -198,7 +331,7 @@
               </div>
               <div class="contact-details">
                 <h3>TÉLÉPHONE</h3>
-                <p>+213 000 000 000</p>
+                <p>+228 93057860</p>
               </div>
             </div>
             <div class="contact-item">
@@ -207,7 +340,7 @@
               </div>
               <div class="contact-details">
                 <h3>LOCALISATION</h3>
-                <p>Alger, Algérie</p>
+                <p>Lomé, Togo</p>
               </div>
             </div>
           </div>

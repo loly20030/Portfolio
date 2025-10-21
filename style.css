@@ -48,33 +48,16 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
   overflow:hidden;
   margin-top:80px;
 }
-
-/* étoiles en background */
-.starry-sky{
-  position:absolute; inset:0;
-  background: radial-gradient(ellipse at bottom, #020204 0%, #000 100%);
-  z-index:1;
-  pointer-events:none;
-  transform: translateZ(0);
-}
-.starry-sky::after{
-  content:'';
-  position:absolute;
-  width:200%;
-  height:200%;
-  top:-50%;
-  left:-50%;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><g fill='white' fill-opacity='0.9'><circle cx='10' cy='20' r='1'/><circle cx='40' cy='60' r='1'/><circle cx='80' cy='10' r='1'/><circle cx='120' cy='150' r='1'/><circle cx='160' cy='40' r='1'/></g></svg>");
-  background-repeat:repeat;
-  background-size:200px 200px;
-  animation: twinkle 10s linear infinite;
-  z-index:2;
-  pointer-events:none;
-}
-@keyframes twinkle{
-  0%{ opacity:0.95; }
-  50%{ opacity:0.45; }
-  100%{ opacity:0.95; }
+#bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.9;
+  filter: brightness(0.6) contrast(1.1) saturate(1.2);
+  pointer-events: none;
 }
 
 /* halo lumineux */
@@ -101,110 +84,6 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
   50% { 
     opacity: 0.8;
     transform: translateX(-50%) scale(1.05);
-  }
-}
-
-/* SUPPRIMEZ TOUTE CETTE SECTION - ANCIENNE PLANÈTE CSS */
-/* 
-.planet{
-  ... (TOUT CE CODE DOIT ÊTRE SUPPRIMÉ)
-}
-*/
-
-/* IMAGE DE PLANÈTE - NOUVELLE VERSION */
-.planet-image-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -25%;
-  z-index: 4;
-  pointer-events: none;
-  width: 100%;
-  max-width: 1200px;
-  text-align: center;
-}
-
-.planet-image {
-  width: 100%;
-  height: auto;
-  max-width: 1200px;
-  filter: 
-    drop-shadow(0 -80px 100px rgba(255, 255, 255, 0.1))
-    drop-shadow(0 -40px 60px rgba(255, 0, 79, 0.2));
-  animation: planet-float 8s ease-in-out infinite;
-}
-
-/* Animation de flottement pour la planète */
-@keyframes planet-float {
-  0%, 100% { 
-    transform: translateY(0) scale(1);
-    filter: 
-      drop-shadow(0 -80px 100px rgba(255, 255, 255, 0.1))
-      drop-shadow(0 -40px 60px rgba(255, 0, 79, 0.2));
-  }
-  50% { 
-    transform: translateY(-10px) scale(1.02);
-    filter: 
-      drop-shadow(0 -100px 120px rgba(255, 255, 255, 0.15))
-      drop-shadow(0 -60px 80px rgba(255, 0, 79, 0.3));
-  }
-}
-
-/* ÉTOILE SCINTILLANTE - VERSION UNIQUE */
-.fixed-star {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  z-index: 5;
-  pointer-events: none;
-  animation: star-pulse 2s ease-in-out infinite;
-}
-
-.fixed-star::before {
-  content: "★";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  color: #ffffff;
-  text-shadow: 
-    0 0 20px rgba(255, 255, 255, 0.9),
-    0 0 40px rgba(255, 255, 255, 0.7),
-    0 0 60px rgba(255, 255, 255, 0.5),
-    0 0 80px rgba(255, 255, 255, 0.3);
-  animation: star-twinkle 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes star-pulse {
-  0%, 100% { 
-    opacity: 0.8;
-    transform: translateX(-50%) scale(1);
-  }
-  50% { 
-    opacity: 1;
-    transform: translateX(-50%) scale(1.1);
-  }
-}
-
-@keyframes star-twinkle {
-  0% { 
-    opacity: 0.7;
-    text-shadow: 
-      0 0 15px rgba(255, 255, 255, 0.8),
-      0 0 30px rgba(255, 255, 255, 0.6),
-      0 0 45px rgba(255, 255, 255, 0.4);
-  }
-  100% { 
-    opacity: 1;
-    text-shadow: 
-      0 0 25px rgba(255, 255, 255, 1),
-      0 0 50px rgba(255, 255, 255, 0.8),
-      0 0 75px rgba(255, 255, 255, 0.6);
   }
 }
 
@@ -262,11 +141,6 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
    BIO-GRAPHIQUE
    ========================= */
 
-/* BIO-GRAPHIQUE section */
-/* =========================
-   BIO-GRAPHIQUE - NOUVEAU DESIGN
-   ========================= */
-
 #about{
   padding:80px 0;
   color:#ababab;
@@ -275,7 +149,7 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
 .row{ display:flex; justify-content:space-between; flex-wrap:wrap; }
 .about-col-1{ 
   flex-basis:35%;
-  position: relative; /* AJOUTÉ */
+  position: relative;
 }
 .about-col-1 img{ 
   width:100%; 
@@ -288,23 +162,18 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 150px; /* 📏 HAUTEUR - augmentez pour plus de flou */
+  height: 150px;
   background: linear-gradient(to top, 
-    rgba(0, 0, 0, 0.8) 0%,       /* 🎚️ NOIR FLUOTÉ en bas */
-    rgba(0, 0, 0, 0.5) 30%,      /* 🎚️ Début de la transition */
-    rgba(0, 0, 0, 0.2) 60%,      /* 🎚️ Presque transparent */
-    rgba(0, 0, 0, 0) 100%);      /* 🎚️ Totalement transparent */
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0) 100%);
   border-radius: 0 0 15px 15px;
   pointer-events: none;
   z-index: 2;
-  /* AJOUT DU FLOU */
-  backdrop-filter: blur(2px);    /* ⭐ FLOU - ajustez cette valeur */
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(8px);
 }
-.about-col-2{ flex-basis:60%; }
-.row{ display:flex; justify-content:space-between; flex-wrap:wrap; }
-.about-col-1{ flex-basis:35%; }
-.about-col-1 img{ width:100%; border-radius:15px; }
 .about-col-2{ flex-basis:60%; }
 
 .sub-title{ 
@@ -371,6 +240,15 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
   font-weight: 400;
 }
 
+.bio-link.active {
+  color: #ff004f;
+  text-shadow: 0 0 8px rgba(255, 0, 79, 0.4);
+}
+
+.bio-link.active::after {
+  width: 100%;
+}
+
 .bio-link::after {
   content: '';
   position: absolute;
@@ -390,6 +268,277 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
 
 .bio-link:hover::after {
   width: 100%;
+}
+
+/* =========================
+   CONTENU DES ONGLETS
+   ========================= */
+
+.tab-content {
+  margin-top: 30px;
+  min-height: 300px;
+}
+
+.tab-pane {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   STYLES POUR LA SECTION COMPÉTENCE - CORRIGÉ
+   ========================= */
+
+.competence-container {
+  margin-top: 20px;
+}
+
+.software-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.software-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.software-item:hover {
+  border-color: #ff004f;
+  box-shadow: 0 0 20px rgba(255, 0, 79, 0.2);
+  transform: translateX(10px);
+}
+
+.software-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 200px; /* Assure un espace minimum pour le nom */
+}
+
+.software-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SUPPRIMER LE FILTRE POUR LES LOGOS - ils doivent garder leurs couleurs d'origine */
+.software-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* RETIRER: filter: brightness(0) invert(1); */
+}
+
+.software-name {
+  font-family: MaPolicePerso, sans-serif;
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 150px; /* Espace réservé pour le nom */
+}
+
+/* Barres de progression - PLUS LARGES */
+.skill-bar-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 30px; /* Espace après le nom */
+}
+
+.skill-bar {
+  flex: 1; /* Prend tout l'espace disponible */
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  max-width: 400px; /* Largeur maximale raisonnable */
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #ff004f, #ff6b9d);
+  border-radius: 4px;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 0, 79, 0.5);
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+/* Styles pour l'expérience */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.experience-item {
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+  border-color: #ff004f;
+  box-shadow: 0 0 20px rgba(255, 0, 79, 0.2);
+  transform: translateY(-5px);
+}
+
+.experience-period {
+  font-family: MaPolicePerso, sans-serif;
+  font-size: 14px;
+  color: #ff004f;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.experience-title {
+  font-family: MaPolicePerso, sans-serif;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.experience-company {
+  font-size: 16px;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.experience-description {
+  font-size: 14px;
+  color: #ababab;
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media only screen and (max-width: 900px){
+  .software-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .skill-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .software-info {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .software-icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+  }
+  
+  .software-name {
+    font-size: 16px;
+  }
+  
+  .skill-bar {
+    height: 6px;
+  }
+}
+
+/* Styles pour l'expérience */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.experience-item {
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+  border-color: #ff004f;
+  box-shadow: 0 0 20px rgba(255, 0, 79, 0.2);
+  transform: translateY(-5px);
+}
+
+.experience-period {
+  font-family: MaPolicePerso, sans-serif;
+  font-size: 14px;
+  color: #ff004f;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.experience-title {
+  font-family: MaPolicePerso, sans-serif;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.experience-company {
+  font-size: 16px;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.experience-description {
+  font-size: 14px;
+  color: #ababab;
+  line-height: 1.6;
 }
 
 /* =========================
@@ -468,13 +617,19 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
   position:relative;
   border: 1px solid #333;
 }
-.work img{ 
-  width:100%; 
-  height:300px;
-  object-fit: cover;
-  display:block; 
-  transition: transform 0.5s; 
+.work img {
+  width: 100%;
+  height: auto;
+  max-height: 150px; /* ajuste selon ta grille */
+  object-fit: contain;
+  object-position: center;
+  background-color: #111; /* pour mieux détacher le logo si fond transparent */
+  padding: 10px;
+  display: block;
+  margin: 0 auto; /* centre horizontalement */
+  transition: transform 0.5s ease;
 }
+
 .layer{ 
   width:100%; 
   height:0; 
@@ -787,14 +942,25 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
     gap:20px; 
     z-index:1200; 
     transition:right .4s; 
+    font-family: MaPolicePerso, sans-serif;
   }
-  #sidemenu li{ margin:20px; }
+  #sidemenu li{ 
+    margin:20px; 
+    font-family: MaPolicePerso, sans-serif;
+  }
+  #sidemenu li a {
+    font-family: MaPolicePerso, sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
   #sidemenu .fa-square-xmark{ 
     display:block; 
     position:absolute; 
     top:20px; 
     left:20px; 
     color:#fff; 
+    font-family: Arial, sans-serif;
   }
   .hero{ height:80vh; margin-top:70px; }
   .hero-title{ font-size:1.8rem; }
@@ -818,38 +984,13 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
   .bio-text { font-size: 14px; }
   .bio-spacer { height: 20px; }
   
-  .planet-image-container { bottom: -20%; max-width: 800px; }
-  .fixed-star { top: 15%; }
-}
-/* Responsive pour la section bio */
-@media only screen and (max-width: 900px){
-  .about-col-1, .about-col-2{ flex-basis:100%; }
-  
-  .about-col-1::after {  /* AJOUTÉ */
+  .about-col-1::after {
     height: 60px;
   }
   
-  .sub-title {
-    font-size: 32px;
-    text-align: center;
-  }
-  
-  .bio-text {
-    font-size: 14px;
-  }
-  
-  .bio-links {
-    flex-direction: column;
+  .software-logos {
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    align-items: center;
-  }
-  
-  .bio-link {
-    font-size: 16px;
-  }
-  
-  .bio-spacer {
-    height: 20px;
   }
 }
 
@@ -862,5 +1003,22 @@ nav .fa-solid.fa-bars{ display:none; cursor:pointer; color:#fff; font-size:22px;
   .oeuvre-item { min-height: 80px; padding: 15px 10px; }
   .oeuvre-item h3 { font-size: 12px; }
   
-  .planet-image-container { bottom: -15%; max-width: 600px; }
+  .software-logos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .software-item {
+    padding: 15px;
+  }
+  
+  .software-logo {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .software-name {
+    font-size: 12px;
+  }
 }

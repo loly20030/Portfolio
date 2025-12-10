@@ -107,3 +107,14 @@
 .tab-pane.active {
   display:block;
 }
+.bio-text-container {
+  line-height: 1.65; /* espace vertical entre lignes */
+}
+
+.bio-line {
+  margin-bottom: 10px; /* espace entre chaque phrase */
+}
+
+.bio-spacer {
+  height: 20px; /* espace plus grand entre paragraphes */
+}

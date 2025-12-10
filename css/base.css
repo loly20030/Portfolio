@@ -40,3 +40,10 @@ body {
 /* Utilities */
 .hidden { display:none !important; }
 .center { text-align:center; }
+/* ==== FONT: AZONIX ==== */
+@font-face {
+    font-family: "Azonix";
+    src: url("../assets/fonts/Azonix.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}

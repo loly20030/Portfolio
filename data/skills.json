@@ -1,0 +1,9 @@
+[
+  { "name": "Photoshop", "level": "90", "icon": "assets/images/icons/photoshop.png", "description": "Retouche, photomontage" },
+  { "name": "Illustrator", "level": "85", "icon": "assets/images/icons/illustrator.png", "description": "Logos, vectoriels" },
+  { "name": "InDesign", "level": "80", "icon": "assets/images/icons/indesign.png", "description": "Mise en page" },
+  { "name": "After Effects", "level": "40", "icon": "assets/images/icons/aftereffects.png", "description": "Motion design" },
+  { "name": "Premiere Pro", "level": "50", "icon": "assets/images/icons/premiere.png", "description": "Montage vidéo" },
+  { "name": "CapCut", "level": "80", "icon": "assets/images/icons/capcut.png", "description": "Montages rapides" },
+  { "name": "Figma", "level": "75", "icon": "assets/images/icons/figma.png", "description": "UI/UX et prototypage" }
+]

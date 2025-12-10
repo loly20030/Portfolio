@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio Futuriste</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio Futuriste - Samari Chabane</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- AOS (animations) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/47923bc3f1.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <!-- NAV / HEADER (fixé) -->
   <nav id="main-nav">
-    <div class="container nav-inner">
-      <img src="images/logo3.png" alt="Logo" class="logo" />
+    <div class="nav-inner container">
+      <img src="assets/images/logo3.png" alt="Logo" class="logo" />
+
       <ul id="sidemenu">
         <li><a href="#header">Accueil</a></li>
         <li><a href="#about">À Propos</a></li>
-        <li><a href="#services">Compétence</a></li>
-        <li><a href="#portfolio">Partenaires</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#oeuvres">Œuvres</a></li>
+        <li><a href="#partners">Partenaires</a></li>
         <li><a href="#contact">Contact</a></li>
         <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i>
       </ul>
+
       <i class="fa-solid fa-bars" onclick="openmenu()"></i>
     </div>
   </nav>
@@ -28,7 +38,7 @@
   <!-- HERO -->
   <header id="header" class="hero">
     <video autoplay muted loop playsinline id="bg-video">
-      <source src="videos/vd.mp4" type="video/mp4" />
+      <source src="assets/videos/vd.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas la vidéo HTML5.
     </video>
 
@@ -43,367 +53,232 @@
   </header>
 
   <!-- BIO-GRAPHIQUE -->
-  <section id="about" class="about-section">
+  <section id="about" class="section">
+    <div class="container row">
+      <div class="about-col-1" data-aos="fade-right">
+        <img src="assets/images/profile/ch.jpg" alt="photo de profil" />
+      </div>
+
+      <div class="about-col-2" data-aos="fade-left">
+        <h1 class="sub-title">BIO-<span class="graphie">GRAPHIQUE</span></h1>
+
+        <div class="bio-text-container">
+          <p class="bio-line"><span class="bio-text">Je suis Chabane SAMARI Alias SAMCHA</span></p>
+          <p class="bio-line"><span class="bio-text">DESIGNER professionnel et Expert en conception visuelle.</span></p>
+          <p class="bio-line"><span class="bio-text">Je suis un véritable passionné du design graphique.</span></p>
+
+          <div class="bio-spacer"></div>
+
+          <p class="bio-line"><span class="bio-text">Ayant travaillé sur plusieurs projets à l'échelle</span></p>
+          <p class="bio-line"><span class="bio-text">nationale & internationale, j'ai affiné mon sens</span></p>
+          <p class="bio-line"><span class="bio-text">du détail et ma capacité à comprendre les besoins uniques.</span></p>
+
+          <div class="bio-spacer"></div>
+
+          <p class="bio-line"><span class="bio-text">Ma passion réside dans la transformation de concepts</span></p>
+          <p class="bio-line"><span class="bio-text">en marques visuellement attrayantes qui laissent</span></p>
+          <p class="bio-line"><span class="bio-text">une impression durable.</span></p>
+        </div>
+
+        <!-- Onglets -->
+        <div class="tabs">
+          <button class="tab-link active" data-tab="skills">COMPÉTENCE</button>
+          <button class="tab-link" data-tab="experience">EXPÉRIENCE</button>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div id="skills" class="tab-pane active"></div>
+
+        <div id="experience" class="tab-pane">
+          <div class="experience-container">
+            <div class="experience-item">
+              <div class="experience-period">2022 - Présent</div>
+              <div class="experience-title">Designer Graphique Senior</div>
+              <div class="experience-company">Innovatione Studio</div>
+              <div class="experience-description">
+                Direction des projets de design, création d'identités visuelles pour des clients internationaux, 
+                supervision d'une équipe de 5 designers juniors.
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-period">2020 - 2022</div>
+              <div class="experience-title">UI/UX Designer</div>
+              <div class="experience-company">Digital Solutions Inc.</div>
+              <div class="experience-description">
+                Conception d'interfaces utilisateur pour applications mobiles et web.
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-period">2018 - 2020</div>
+              <div class="experience-title">Designer Graphique</div>
+              <div class="experience-company">Creative Agency</div>
+              <div class="experience-description">
+                Création de supports print et digital, conception de chartes graphiques.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ŒUVRES -->
+  <section id="oeuvres" class="section">
     <div class="container">
-      <div class="row">
-        <div class="about-col-1" data-aos="fade-right">
-          <img src="images/ch.jpg" alt="photo de profil"/>
-        </div>
-        <div class="about-col-2" data-aos="fade-left">
-          <h1 class="sub-title">BIO-<span class="graphie">GRAPHIQUE</span></h1>
-          
-          <div class="bio-text-container">
-            <p class="bio-line">
-              <span class="bio-text">Le premier groupe de communication et de</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">diversification en division de l'Ouest</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">Innovatione.</span>
-            </p>
-            
-            <div class="bio-spacer"></div>
-            
-            <p class="bio-line">
-              <span class="bio-text">Un groupe autoclou, auffertique et</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">supportif est des centres exactes</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">quand ils montre sur tous les autres</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">et recentiers.</span>
-            </p>
-            
-            <div class="bio-spacer"></div>
-            
-            <p class="bio-line">
-              <span class="bio-text">En tant que vert taire ouverte de la</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">commerciation nous permettons prise a</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">conjuger notre mode a travers toute</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">l'image et ne s'est pas un vent complet</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">projet en vue ductionnel en fonction</span>
-            </p>
-            <p class="bio-line">
-              <span class="bio-text">regions-veilles</span>
-            </p>
-          </div>
+      <h1 class="section-title" data-aos="fade-up">ŒUVRE</h1>
 
-          <!-- Onglets -->
-          <div class="bio-links">
-            <button class="bio-link" data-tab="skills">COMPÉTENCE</button>
-            <button class="bio-link" data-tab="experience">EXPÉRIENCE</button>
-          </div>
+      <div class="oeuvre-grid">
+        <div class="oeuvre-column" data-aos="fade-up">
+          <div class="oeuvre-item" data-category="design-graphique"><h3>DESIGN GRAPHIQUE</h3></div>
+          <div class="oeuvre-item" data-category="evenements"><h3>BRANDING / EVENEMENT PARTICIPER</h3></div>
+        </div>
 
-          <!-- Contenu des onglets -->
-          <div class="tab-content">
-            <!-- Onglet Compétences -->
-            <!-- Onglet Compétences -->
-<div id="skills" class="tab-pane">
-  <div class="competence-container">
-    <div class="software-list">
-      <div class="software-item">
-        <div class="software-info">
-          <div class="software-icon">
-            <img src="images/photoshop.png" alt="Photoshop" />
-          </div>
-          <span class="software-name">Photoshop</span>
+        <div class="oeuvre-column" data-aos="fade-up" data-aos-delay="100">
+          <div class="oeuvre-item" data-category="charte-graphique"><h3>LOGO / CHARTE GRAPHIQUE</h3></div>
         </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar">
-            <div class="skill-progress" data-level="90"></div>
-          </div>
+
+        <div class="oeuvre-column" data-aos="fade-up" data-aos-delay="200">
+          <div class="oeuvre-item" data-category="ui-ux"><h3>UI / UX DESIGN</h3></div>
+          <div class="oeuvre-item" data-category="campagne"><h3>CAMPAGNE VISUELLE</h3></div>
         </div>
       </div>
-      <div class="software-item">
-        <div class="software-info">
-          <div class="software-icon">
-            <img src="images/illustrator.png" alt="Illustrator" />
-          </div>
-          <span class="software-name">Illustrator</span>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar">
-            <div class="skill-progress" data-level="85"></div>
-          </div>
-        </div>
-      </div>
-      <div class="software-item">
-        <div class="software-info">
-          <div class="software-icon">
-            <img src="images/indesign.png" alt="Indesign" />
-          </div>
-          <span class="software-name">Indesign</span>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar">
-            <div class="skill-progress" data-level="80"></div>
-          </div>
-        </div>
-      </div>
-      <div class="software-item">
-        <div class="software-info">
-          <div class="software-icon">
-            <img src="images/after-effects.png" alt="After Effect" />
-          </div>
-          <span class="software-name">After Effect</span>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar">
-            <div class="skill-progress" data-level="75"></div>
-          </div>
-        </div>
-      </div>
-      <div class="software-item">
-        <div class="software-info">
-          <div class="software-icon">
-            <img src="images/premiere-pro.png" alt="Premiere Pro" />
-          </div>
-          <span class="software-name">Premiere Pro</span>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar">
-            <div class="skill-progress" data-level="70"></div>
-          </div>
-        </div>
-      </div>
-      <div class="software-item">
-        <div class="software-info">
-          <div class="software-icon">
-            <img src="images/blender.png" alt="Blender" />
-          </div>
-          <span class="software-name">Blender</span>
-        </div>
-        <div class="skill-bar-container">
-          <div class="skill-bar">
-            <div class="skill-progress" data-level="65"></div>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <!-- Galerie Modale -->
+  <div id="gallery-modal" class="gallery-modal" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeGalleryModal()">&times;</span>
+      <h2 id="modal-title">GALERIE</h2>
+      <div class="gallery-container">
+        <div class="gallery-grid" id="gallery-grid"></div>
       </div>
     </div>
   </div>
-</div>
-            <!-- Onglet Expérience -->
-            <div id="experience" class="tab-pane">
-              <div class="experience-container">
-                <div class="experience-item">
-                  <div class="experience-period">2022 - Présent</div>
-                  <div class="experience-title">Designer Graphique Senior</div>
-                  <div class="experience-company">Innovatione Studio</div>
-                  <div class="experience-description">
-                    Direction des projets de design, création d'identités visuelles pour des clients internationaux, 
-                    supervision d'une équipe de 5 designers juniors.
-                  </div>
-                </div>
-                <div class="experience-item">
-                  <div class="experience-period">2020 - 2022</div>
-                  <div class="experience-title">UI/UX Designer</div>
-                  <div class="experience-company">Digital Solutions Inc.</div>
-                  <div class="experience-description">
-                    Conception d'interfaces utilisateur pour applications mobiles et web, 
-                    réalisation de tests utilisateurs, collaboration avec les développeurs front-end.
-                  </div>
-                </div>
-                <div class="experience-item">
-                  <div class="experience-period">2018 - 2020</div>
-                  <div class="experience-title">Designer Graphique</div>
-                  <div class="experience-company">Creative Agency</div>
-                  <div class="experience-description">
-                    Création de supports print et digital, conception de chartes graphiques, 
-                    participation à des campagnes publicitaires pour des marques locales.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Le reste du code reste inchangé -->
-  <!-- ŒUVRES -->
-  <section id="services">
-    <div class="container">
-      <h1 class="sub-title" data-aos="fade-up">ŒUVRE</h1>
-      <div class="oeuvre-grid">
-        <div class="oeuvre-column" data-aos="fade-up">
-          <div class="oeuvre-item">
-            <h3>DESIGN GRAPHIQUE</h3>
-          </div>
-          <div class="oeuvre-item">
-            <h3>EVENEMENT PARTICIPER</h3>
-          </div>
-        </div>
-        <div class="oeuvre-column" data-aos="fade-up" data-aos-delay="100">
-          <div class="oeuvre-item">
-            <h3>BRANDING</h3>
-          </div>
-          <div class="oeuvre-item">
-            <h3>CHARTE GRAPHIQUE</h3>
-          </div>
-        </div>
-        <div class="oeuvre-column" data-aos="fade-up" data-aos-delay="200">
-          <div class="oeuvre-item">
-            <h3>UI / UX DESIGN</h3>
-          </div>
-          <div class="oeuvre-item">
-            <h3>CAMPAGNE VISUELLE</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- PARTENAIRES -->
-  <section id="portfolio">
-    <div class="container">
-      <h1 class="sub-title" data-aos="fade-up">Partenaires</h1>
-      <div class="work-list">
-        <div class="work" data-aos="fade-up">
-          <img src="images/UK LOGO.png" alt="UK" />
-          <div class="layer">
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
+ 
 
-        <div class="work" data-aos="fade-up" data-aos-delay="100">
-          <img src="images/YENDE GROUP LOGO.png" alt="Yende Group" />
-          <div class="layer">
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
+  <!-- Modale Partenaire -->
+ <section id="partenaires" class="section container">
+    <h1 class="section-title">PARTENAIRES</h1>
 
-        <div class="work" data-aos="fade-up" data-aos-delay="200">
-          <img src="images/ONAT LOGO.png" alt="Onat" />
-          <div class="layer">
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-
-        <div class="work" data-aos="fade-up" data-aos-delay="300">
-          <img src="images/EIT SOLUTION.png" alt="Partenaire 4" />
-          <div class="layer">
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-
-        <div class="work" data-aos="fade-up" data-aos-delay="400">
-          <img src="images/JEFFA EVENT LOGO.png" alt="Partenaire 5" />
-          <div class="layer">
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-      </div>
+    <div class="partners-grid">
+        <!-- Généré par JS -->
     </div>
-  </section>
+</section>
+
+<!-- MODAL -->
+<div id="partner-modal" class="partner-modal">
+    <div class="partner-modal-content">
+        
+        <button class="close-partner-modal" onclick="closePartnerModal()">&times;</button>
+
+        <img id="partner-logo" class="partner-logo" alt="Logo">
+
+        <div class="partner-info">
+            <h3 id="partner-name"></h3>
+            <span id="partner-sector"></span>
+
+            <div class="modal-section">
+                <div class="modal-section-title">À propos</div>
+                <p id="partner-about"></p>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-title">Détails</div>
+                <div class="partner-details">
+                    <p><strong>Site Web :</strong> <span id="partner-website"></span></p>
+                    <p><strong>Spécialité :</strong> <span id="partner-specialty"></span></p>
+                    <p><strong>Localisation :</strong> <span id="partner-location"></span></p>
+                    <p><strong>Collaboration :</strong> <span id="partner-collab"></span></p>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-title">Projets réalisés</div>
+                <div id="partner-projects"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h1 class="sub-title" data-aos="fade-up">CONTACTEZ-MOI</h1>
-      <div class="row">
-        <div class="contact-left" data-aos="fade-right">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-paper-plane"></i>
-              </div>
-              <div class="contact-details">
-                <h3>EMAIL</h3>
-                <p>samarichabane04@gmail.com </p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <div class="contact-details">
-                <h3>TÉLÉPHONE</h3>
-                <p>+228 93057860</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div class="contact-details">
-                <h3>LOCALISATION</h3>
-                <p>Lomé, Togo</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-grid">
-            <a href="" class="social-card">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="" class="social-card">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="" class="social-card">
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="" class="social-card">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
-          </div>
-
-          <a href="" download class="btn-download">
-            <i class="fa-solid fa-download"></i>
-            TÉLÉCHARGER CV
-          </a>
+  <section id="contact" class="section">
+    <div class="container row">
+      <div class="contact-left" data-aos="fade-right">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-paper-plane"></i></div>
+          <div class="contact-details"><h3>EMAIL</h3><p>samarichabane04@gmail.com</p></div>
         </div>
 
-        <div class="contact-right" data-aos="fade-left">
-          <div class="form-container">
-            <form name="submit-to-google-sheet" class="futurist-form">
-              <div class="input-group">
-                <input type="text" name="Nom" required />
-                <label>Votre nom</label>
-                <div class="input-line"></div>
-              </div>
-              <div class="input-group">
-                <input type="email" name="Email" required />
-                <label>Votre email</label>
-                <div class="input-line"></div>
-              </div>
-              <div class="input-group textarea-group">
-                <textarea name="Message" rows="4" required></textarea>
-                <label>Votre message</label>
-                <div class="input-line"></div>
-              </div>
-              <button type="submit" class="btn-submit">
-                <span>ENVOYER LE MESSAGE</span>
-                <i class="fa-solid fa-paper-plane"></i>
-              </button>
-            </form>
-            <span id="msg"></span>
-          </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-details"><h3>TÉLÉPHONE</h3><p>+228 93057860</p></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-details"><h3>LOCALISATION</h3><p>Lomé, Togo</p></div>
+        </div>
+
+        <div class="social-grid">
+          <a href="#" class="social-card"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-card"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-card"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-card"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+
+        <a href="documents/CV SAMARI CHABANE.pdf" download class="btn-download"><i class="fa-solid fa-download"></i> TÉLÉCHARGER CV</a>
+      </div>
+
+      <div class="contact-right" data-aos="fade-left">
+        <div class="form-container">
+          <form class="futurist-form" name="submit-to-google-sheet">
+            <input type="text" name="Nom" required placeholder="Votre nom" />
+            <input type="email" name="Email" required placeholder="Votre email" />
+            <textarea name="Message" rows="4" required placeholder="Votre message"></textarea>
+            <button type="submit" class="btn-submit"><span>ENVOYER LE MESSAGE</span> <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <span id="msg"></span>
         </div>
       </div>
     </div>
-    <div class="copyright">
-      <p>© 2025 Ekeman. Conçu avec <i class="fa-solid fa-heart"></i> par 2ATech</p>
-    </div>
-  </section>
 
-  <!-- SCRIPTS -->
-  <script src="script.js"></script>
+   
+  </section>
+<!-- Base -->
+<link rel="stylesheet" href="css/base.css">
+
+<!-- Sections -->
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="css/skills.css">
+<link rel="stylesheet" href="css/experience.css">
+<link rel="stylesheet" href="css/oeuvres.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/partners.css">
+<link rel="stylesheet" href="css/contact.css">
+
+<!-- Responsive (toujours en dernier) -->
+<link rel="stylesheet" href="css/responsive.css">
+
+  <!-- SCRIPTS - ordre important -->
+  <script src="js/menu.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/skills.js"></script>
+  <script src="js/galleries.js"></script>
+  <script src="js/partners.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- AOS JS (init) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
+  <script> AOS.init({ duration: 900, once: true }); </script>
 </body>
 </html>

@@ -1,0 +1,70 @@
+/* =========================
+   NAVBAR
+   ========================= */
+
+#main-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(5,5,6,0.6);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  z-index: 1200;
+}
+
+.nav-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 2.5%;
+}
+
+#main-nav .logo {
+  width:140px;
+}
+
+/* -------------------------
+   MENU DESKTOP
+-------------------------- */
+#sidemenu {
+  list-style: none;
+  display:flex;
+  gap:22px;
+}
+
+#sidemenu li a {
+  color: var(--text);
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
+  padding:6px 0;
+  font-size:15px;
+}
+
+#sidemenu li a::after {
+  content:"";
+  position:absolute;
+  left:0; bottom:-8px;
+  width:0; height:2px;
+  background: linear-gradient(90deg, var(--neon), var(--neon-2));
+  transition: width .25s;
+}
+
+#sidemenu li a:hover::after {
+  width:100%;
+}
+
+#sidemenu .fa-square-xmark {
+  display:none;
+}
+
+/* -------------------------
+   MENU MOBILE ICON
+-------------------------- */
+.fa-bars {
+  display:none;
+  color: var(--text);
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* Mobile behaviour (hidden here, in responsive.css it becomes active) */

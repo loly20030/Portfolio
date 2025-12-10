@@ -1,0 +1,43 @@
+{
+  "design-graphique": {
+    "title": "DESIGN GRAPHIQUE",
+    "images": [
+      { "src": "assets/images/gallery/design-graphique/design1.jpg" },
+      { "src": "assets/images/gallery/design-graphique/design2.jpg" },
+      { "src": "assets/images/gallery/design-graphique/design3.jpg" }
+    ]
+  },
+  "evenements": {
+    "title": "BRANDING / EVENEMENT PARTICIPER",
+    "images": [
+      { "src": "assets/images/branding/228 BASKET PLAYGROUND 2025.png"},
+      { "src": "assets/images/branding/228 BBQ BIG GRILL.png" },
+      { "src": "assets/images/branding/ECOBANK 40 ANS.png"},
+      { "src": "assets/images/branding/FULL MOON.png" },
+      { "src": "assets/images/branding/IMA 2025.png" },
+      { "src": "assets/images/branding/THE BIG SIP.png" },
+       { "src": "assets/images/branding/THE BIG SIP.png" }
+    ]
+  },
+  "charte-graphique": {
+    "title": "LOGO / CHARTE GRAPHIQUE",
+    "images": [
+      { "src": "assets/images/gallery/charte/charte1.jpg" },
+      { "src": "assets/images/gallery/charte/charte2.jpg" }
+    ]
+  },
+  "ui-ux": {
+    "title": "UI / UX DESIGN",
+    "images": [
+      { "src": "assets/images/gallery/ui-ux/ui1.jpg" },
+      { "src": "assets/images/gallery/ui-ux/ui2.jpg" }
+    ]
+  },
+  "campagne": {
+    "title": "CAMPAGNE VISUELLE",
+    "images": [
+      { "src": "assets/images/gallery/campagne/camp1.jpg" },
+      { "src": "assets/images/gallery/campagne/camp2.jpg" }
+    ]
+  }
+}

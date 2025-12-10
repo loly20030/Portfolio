@@ -1,0 +1,61 @@
+/* =========================
+   OEUVRES (UI/UX, DESIGN, BRANDING)
+   ========================= */
+
+/* Titre de section */
+.section-title {
+  font-family:'MaPolicePerso';
+  font-size:36px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+/* Grille horizontale des 3 colonnes */
+.oeuvre-grid {
+  display:flex;
+  justify-content:center;
+  gap:44px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+/* Colonne individuelle */
+.oeuvre-column {
+  width:300px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  max-width:300px;
+}
+
+/* Carte cliquable */
+.oeuvre-item {
+  padding:22px;
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.04);
+  border-radius:12px;
+  min-height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  transition: transform .28s, box-shadow .28s, border-color .28s;
+  cursor:pointer;
+}
+
+.oeuvre-item h3 {
+  font-family:'MaPolicePerso';
+  font-size:15px;
+  color:var(--text);
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.oeuvre-item:hover {
+  transform:translateY(-6px);
+  box-shadow: 0 14px 40px rgba(255,0,79,0.06);
+  border-color:var(--neon);
+  background: rgba(255,0,79,0.04);
+}

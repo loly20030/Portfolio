@@ -1,0 +1,110 @@
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* ======================================
+   TABLETTES & PETITS ÉCRANS
+====================================== */
+@media(max-width: 900px) {
+
+  /* ----- MENU MOBILE ----- */
+  #sidemenu {
+    position: fixed;
+    right:-260px;
+    top:0;
+    height:100vh;
+    width:260px;
+    background:var(--neon);
+    padding-top:80px;
+    flex-direction:column;
+    gap:20px;
+    transition:right .35s ease;
+    z-index:1400;
+  }
+
+  #sidemenu li a {
+    color:#fff;
+    font-size:17px;
+    font-weight:700;
+  }
+
+  #sidemenu .fa-square-xmark {
+    display:block;
+    position:absolute;
+    top:16px;
+    left:16px;
+    font-size:26px;
+    color:#fff;
+  }
+
+  .fa-bars {
+    display:block;
+  }
+
+  /* ----- ABOUT (photo + bio) ----- */
+  .row {
+    flex-direction:column-reverse;
+    gap:18px;
+  }
+
+  .about-col-1,
+  .about-col-2 {
+    width:100%;
+    max-width:100%;
+  }
+
+  .about-col-1::after {
+    height:100px;
+  }
+
+  /* ----- PARTENAIRES ----- */
+  .work-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap:12px;
+  }
+
+  /* ----- OEUVRES ----- */
+  .oeuvre-column {
+    width:100%;
+    max-width:600px;
+    margin:0 auto;
+  }
+}
+
+/* ======================================
+   TÉLÉPHONES
+====================================== */
+@media(max-width: 600px) {
+
+  /* ----- HERO ----- */
+  .hero-title {
+    font-size:22px;
+  }
+
+  .section {
+    padding:36px 0;
+  }
+
+  /* ----- GALLERY ----- */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ----- PARTENAIRES ----- */
+  .work-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* ----- CONTACT ----- */
+  .contact-left {
+    order:2;
+  }
+
+  .contact-right {
+    order:1;
+  }
+
+  .futurist-form {
+    width:100%;
+  }
+}

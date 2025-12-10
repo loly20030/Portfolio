@@ -1,0 +1,46 @@
+/* =========================
+   EXPERIENCE
+   ========================= */
+
+/* Conteneur global */
+.experience-container {
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  margin-top:8px;
+}
+
+/* Bloc individuel */
+.experience-item {
+  background:var(--glass);
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.04);
+  padding:16px;
+  transition: .25s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon);
+  box-shadow: var(--shadow-neon);
+}
+
+/* Année / période */
+.experience-period {
+  color:var(--neon);
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+/* Titre poste / fonction */
+.experience-title {
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:4px;
+}
+
+/* Description */
+.experience-item p {
+  color:var(--muted);
+  line-height:1.4;
+}

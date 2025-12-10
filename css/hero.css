@@ -1,0 +1,86 @@
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+  height: 92vh;
+  min-height: 520px;
+  margin-top: 72px; /* navbar offset */
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+
+/* ----------- Background Video ------------ */
+#bg-video {
+  position:absolute;
+  inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  opacity:0.75;
+  z-index:1;
+  filter: brightness(.6) contrast(1.05) saturate(1.1);
+  pointer-events:none;
+}
+
+/* ----------- Neon Glow Light ------------ */
+.sun-glow {
+  position:absolute;
+  top:8%; left:50%;
+  transform:translateX(-50%);
+  width:520px; height:520px;
+  background: radial-gradient(circle,
+      rgba(255,255,255,0.9),
+      rgba(255,0,79,0.12),
+      transparent 80%
+  );
+  filter:blur(120px);
+  opacity:0.8;
+  z-index:2;
+  animation: glow-pulse 6s infinite;
+}
+
+@keyframes glow-pulse {
+  0%,100% {
+    transform:translateX(-50%) scale(1);
+    opacity:0.65;
+  }
+  50% {
+    transform:translateX(-50%) scale(1.05);
+    opacity:0.85;
+  }
+}
+
+/* ----------- Inner content ------------ */
+.hero-inner {
+  z-index:10;
+  padding:30px;
+}
+
+.hero-title {
+  font-family:'MaPolicePerso', sans-serif;
+  font-size: clamp(26px,4.6vw,44px);
+  text-transform:uppercase;
+  color: var(--text);
+  letter-spacing:1.5px;
+  font-weight:300;
+  margin-bottom: 14px;
+  text-shadow: 0 6px 30px rgba(0,0,0,0.7);
+}
+
+/* ----------- Line under hero title ------------ */
+.title-underline {
+  width:160px;
+  height:3px;
+  margin:10px auto 0;
+  background:linear-gradient(90deg, transparent, #fff, transparent);
+  animation:line-shimmer 2s infinite;
+}
+
+@keyframes line-shimmer {
+  0%,100% { opacity:.7; }
+  50%     { opacity:1; }
+}

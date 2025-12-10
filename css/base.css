@@ -1,0 +1,42 @@
+/* =========================
+   RESET + VARIABLES
+   ========================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #050506;
+  --panel: #0b0b0d;
+  --text: #ffffff;
+  --muted: #bfbfbf;
+  --neon: #ff004f;
+  --neon-2: #ff2d7a;
+  --glass: rgba(255,255,255,0.03);
+  --shadow-neon: 0 8px 40px rgba(255,0,79,0.06);
+  --container-w: 1100px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.container {
+  width: 92%;
+  max-width: var(--container-w);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+/* Utilities */
+.hidden { display:none !important; }
+.center { text-align:center; }

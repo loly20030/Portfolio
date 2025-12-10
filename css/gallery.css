@@ -1,0 +1,129 @@
+/* =========================
+   GALLERY MODAL
+   ========================= */
+
+.gallery-modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  z-index:2000;
+  justify-content:center;
+  align-items:center;
+  padding:32px;
+  overflow-y:auto;
+}
+
+.modal-content {
+  width:100%;
+  max-width:1200px;
+  max-height:90vh;
+  overflow-y:auto;
+  background:#0b0b0d;
+  border-radius:12px;
+  padding:20px;
+  border:1px solid rgba(255,255,255,0.05);
+  animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform:scale(.94); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+.close-modal {
+  float:right;
+  font-size:30px;
+  color:#fff;
+  cursor:pointer;
+}
+
+
+/* =========================
+   GALLERY GRID
+   ========================= */
+
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+  gap:22px;
+  margin-top:20px;
+}
+
+/* Cadre avec taille automatique adaptée à l’image */
+.gallery-item {
+  position:relative;
+  width:100%;
+  background:#000;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+/* Image propre, sans crop, sans overlay */
+.gallery-item img {
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  background:#fafafa; /* rend les écritures parfaitement visibles */
+}
+
+
+/* Hover minimal et propre */
+.gallery-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon);
+}
+
+
+/* =========================
+   LIGHTBOX FULLSCREEN
+   ========================= */
+
+#lightbox {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+  cursor:zoom-out;
+  padding:20px;
+}
+
+#lightbox img {
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  animation: zoomIn .25s ease;
+  box-shadow:0 0 30px rgba(255,0,79,0.18);
+}
+
+@keyframes zoomIn {
+  from { transform:scale(.8); opacity:0; }
+  to   { transform:scale(1); opacity:1; }
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:600px) {
+  .gallery-grid {
+    grid-template-columns:1fr;
+  }
+}
+/* Scroll totalement invisible */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+html, body {
+  scrollbar-width: none;   /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}

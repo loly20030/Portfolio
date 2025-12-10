@@ -1,0 +1,59 @@
+[
+  {
+    "id": "uk",
+    "name": "UK Company",
+    "sector": "Technologie & Innovation",
+    "logo": "assets/images/partners/UK LOGO.png",
+    "about": "Leader dans les solutions digitales.",
+    "website": "https://ukcompany.com",
+    "location": "Londres, Royaume-Uni",
+    "specialty": "Développement logiciel",
+    "collaboration": "2022 - Présent",
+    "projects": [
+      { "name": "Identité Visuelle", "description": "Refonte complète de l'identité." },
+      { "name": "Campagne 2023", "description": "Visuels et motion design." }
+    ]
+  },
+  {
+    "id": "yende",
+    "name": "Yende Group",
+    "sector": "Consulting",
+    "logo": "assets/images/partners/PARTENAIRE logo.png",
+    "about": "Cabinet de conseil international.",
+    "website": "https://yende.com",
+    "location": "Paris, France",
+    "specialty": "Stratégie & Branding",
+    "collaboration": "2021 - Présent",
+    "projects": [
+      { "name": "Branding Corporate", "description": "Charte et supports pro." }
+    ]
+  },
+  {
+    "id": "onat",
+    "name": "ONAT Solutions",
+    "sector": "Digital Services",
+    "logo": "assets/images/partners/ONAT LOGO.png",
+    "about": "Solutions numériques africaines.",
+    "website": "https://onat-solutions.com",
+    "location": "Lomé, Togo",
+    "specialty": "Transformation digitale",
+    "collaboration": "2023 - Présent",
+    "projects": [
+      { "name": "Plateforme SaaS", "description": "UI/UX complète." }
+    ]
+  },
+  {
+    "id": "sony",
+    "name": "Sony Corporation",
+    "sector": "Technologie & Média",
+    "logo": "assets/images/partners/LOGO SONY.png",
+    "about": "Entreprise internationale d'électronique.",
+    "website": "https://sony.com",
+    "location": "Tokyo, Japon",
+    "specialty": "Électronique & divertissement",
+    "collaboration": "2023 - Présent",
+    "projects": [
+      { "name": "Campagne régionale", "description": "Design visuel pour campagne." }
+    ]
+  }
+]

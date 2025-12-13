@@ -2,119 +2,155 @@
    ABOUT / BIOGRAPHIE
    ========================= */
 
-/* Layout global */
 .row {
-  display:flex;
-  gap:36px;
-  flex-wrap:wrap;
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
 }
 
-/* ----------- Photo (colonne de gauche) ------------ */
+/* ----------- Photo ------------ */
 .about-col-1 {
-  flex:0 0 36%;
-  max-width:420px;
-  position:relative;
+  flex: 0 0 36%;
+  max-width: 420px;
+  position: relative;
 }
 
 .about-col-1 img {
-  width:100%;
-  border-radius:14px;
+  width: 100%;
+  border-radius: 14px;
 }
 
-/* Ombre dégradée en bas de la photo */
 .about-col-1::after {
-  content:"";
-  position:absolute;
-  bottom:0; left:0; right:0;
-  height:140px;
-  border-radius:0 0 14px 14px;
-  background:linear-gradient(
-      to top,
-      rgba(0,0,0,.9),
-      rgba(0,0,0,.3),
-      transparent
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 140px;
+  border-radius: 0 0 14px 14px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.9),
+    rgba(0,0,0,.3),
+    transparent
   );
 }
 
-/* ----------- Texte biographique ------------ */
+/* ----------- Texte ------------ */
 .about-col-2 {
-  flex:1 1 58%;
+  flex: 1 1 58%;
 }
 
 .sub-title {
-  font-size:34px;
-  font-family:'MaPolicePerso', sans-serif;
-  margin-bottom:18px;
+  font-size: 34px;
+  font-family: 'Azonix', 'MaPolicePerso', sans-serif;
+  letter-spacing: 2px;
 }
+
 
 .graphie {
-  color:var(--neon);
-  text-shadow:0 0 8px rgba(255,0,79,0.22);
+  color: var(--neon);
+  text-shadow: 0 0 8px rgba(255,0,79,0.22);
 }
 
-.bio-text-container p {
-  color: var(--muted);
-  margin-bottom:6px;
-  line-height:1.5;
-}
-
-/* =========================
-   ONGLETS (ABOUT TABS)
-   ========================= */
-
-.tabs {
-  display:flex;
-  gap:28px;
-  margin-top:18px;
-  margin-bottom:16px;
-  flex-wrap:wrap;
-}
-
-.tab-link {
-  background:none;
-  border:none;
-  font-family:'MaPolicePerso';
-  color: var(--text);
-  font-size:16px;
-  cursor:pointer;
-  padding:6px 0;
-  position:relative;
-  letter-spacing:1px;
-}
-
-.tab-link.active {
-  color:var(--neon);
-}
-
-.tab-link::after {
-  content:"";
-  position:absolute;
-  bottom:-8px; left:0;
-  height:2px; width:0;
-  background:var(--neon);
-  transition:width .25s;
-}
-
-.tab-link.active::after {
-  width:100%;
-}
-
-.tab-pane {
-  display:none;
-  margin-top:12px;
-}
-
-.tab-pane.active {
-  display:block;
-}
+/* ----------- Bio ------------ */
 .bio-text-container {
-  line-height: 1.65; /* espace vertical entre lignes */
+  line-height: 1.65;
 }
 
 .bio-line {
-  margin-bottom: 10px; /* espace entre chaque phrase */
+  margin-bottom: 10px;
 }
 
 .bio-spacer {
-  height: 20px; /* espace plus grand entre paragraphes */
+  height: 20px;
+}
+.tab-pane {
+  margin-top: 18px;
+}
+
+/* =========================
+   ONGLETS
+   ========================= */
+
+/* Onglets */
+.tabs {
+  margin-top: 30px;   /* 🔥 espace après le texte */
+  margin-bottom: 24px;
+
+}
+
+.tab-link {
+  background: none;
+  border: none;
+  font-family: var(--font-title); /* 🔥 AZONIX */
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 4px;
+  color: var(--text);
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+
+.tab-link.active {
+  color: var(--neon);
+}
+
+.tab-link::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--neon);
+  transition: width .25s;
+}
+
+.tab-link.active::after {
+  width: 100%;
+}
+.tabs .tab-link:first-child {
+  margin-right: 48px; /* 🔥 espace entre COMPÉTENCE et EXPÉRIENCE */
+}
+/* 🔥 CONTENU MASQUÉ PAR DÉFAUT */
+.tab-pane {
+  display: none;
+  margin-top: 12px;
+}
+
+.tab-pane.active {
+  display: block;
+}
+/* TEXTE BIO PRINCIPAL */
+.bio-text-container {
+  max-width: 640px;
+  margin-bottom: 28px; /* espace AVANT les onglets */
+}
+
+.bio-paragraph {
+  font-size: 16.5px;        /* 🔥 plus lisible */
+  line-height: 1.75;        /* 🔥 respiration */
+  color: var(--muted);
+  margin-bottom: 18px;
+  letter-spacing: 0.2px;
+}
+
+/* Mots importants */
+.bio-paragraph strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+  }
+
+  @media (min-width: 1024px) {
+  .bio-paragraph {
+    font-size: 17px;
+  }
+}
+
 }

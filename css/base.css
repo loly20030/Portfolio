@@ -36,6 +36,10 @@ body {
 .section {
   padding: 60px 0;
 }
+:root {
+  --font-title: 'Azonix', sans-serif;
+  --font-text: Inter, system-ui, sans-serif;
+}
 
 /* Utilities */
 .hidden { display:none !important; }

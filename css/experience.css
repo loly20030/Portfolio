@@ -44,3 +44,9 @@
   color:var(--muted);
   line-height:1.4;
 }
+.skill-name,
+.skill-desc,
+.experience-title,
+.experience-company {
+  font-family: 'MaPolicePerso', sans-serif;
+}

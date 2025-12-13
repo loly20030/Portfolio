@@ -1,61 +1,76 @@
-// ----------- GALERIES (ŒUVRES) -----------
-let _galleries = {};
+let galleriesData = {};
 
-function loadGalleries() {
-  fetch("data/galleries.json")
-    .then(res => res.json())
-    .then(data => {
-      _galleries = data;
-      bindOeuvreClicks();
-    })
-    .catch(err => console.error("Erreur galleries.json :", err));
-}
+fetch("data/galleries.json")
+  .then(res => res.json())
+  .then(data => {
+    galleriesData = data;
+    initOeuvres();
+  });
 
-function bindOeuvreClicks() {
-  document.querySelectorAll('.oeuvre-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const cat = item.dataset.category;
-      openGalleryModal(cat);
+function initOeuvres() {
+  document.querySelectorAll(".oeuvre-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const type = item.dataset.gallery;
+      if (galleriesData[type]) {
+        openProjects(type);
+      }
     });
   });
 }
 
-function openGalleryModal(category) {
+function openProjects(type) {
   const modal = document.getElementById("gallery-modal");
   const grid = document.getElementById("gallery-grid");
-  const title = document.getElementById("modal-title");
 
-  if (!modal || !grid) return;
-
-  const data = _galleries[category];
-
-  title.textContent = data?.title || category;
   grid.innerHTML = "";
 
-  if (data && Array.isArray(data.images)) {
-    data.images.forEach((img, i) => {
-      let div = document.createElement("div");
-      div.className = "gallery-item";
-      div.style.animationDelay = `${i * 0.06}s`;
-      div.innerHTML = `<img src="${img.src}" alt="${img.title || ''}">`;
-      grid.appendChild(div);
-    });
-  }
+  galleriesData[type].forEach(project => {
+    const div = document.createElement("div");
+    div.className = "gallery-item";
 
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden";
+    const img = document.createElement("img");
+    img.src = project.cover;
+    img.alt = project.title;
+
+    div.appendChild(img);
+    grid.appendChild(div);
+
+    div.addEventListener("click", () => openProject(project));
+  });
+
+  modal.classList.add("active");
 }
 
-function closeGalleryModal() {
-  const modal = document.getElementById("gallery-modal");
-  if (!modal) return;
-  modal.style.display = "none";
-  document.body.style.overflow = "auto";
+function openProject(project) {
+  const grid = document.getElementById("gallery-grid");
+  grid.innerHTML = "";
+
+  project.images.forEach(src => {
+    const div = document.createElement("div");
+    div.className = "gallery-item";
+
+    const img = document.createElement("img");
+    img.src = src;
+
+    div.appendChild(img);
+    grid.appendChild(div);
+  });
 }
 
-document.addEventListener("click", (e) => {
-  const modal = document.getElementById("gallery-modal");
-  if (modal && modal.style.display === "flex" && e.target === modal) {
-    closeGalleryModal();
+/* =========================
+   FERMETURE SIMPLE
+   ========================= */
+
+document.getElementById("gallery-modal").addEventListener("click", e => {
+  if (e.target.id === "gallery-modal") {
+    closeGallery();
   }
 });
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeGallery();
+});
+
+function closeGallery() {
+  document.getElementById("gallery-modal").classList.remove("active");
+}
